@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+************************************************************************
+Grob 102 Jean's ASTRI
+Setpember 2011 BARANGER Emmanuel
+************************************************************************
+-->
+
+<PropertyList include="astir-base.xml">
+
+  <sim>
+
+    <description>Grob 102 Jean's ASTIR (YASim)</description>
+    <flight-model>yasim</flight-model>
+    <aero>astir-yasim</aero>
+
+  </sim>
+
+</PropertyList>

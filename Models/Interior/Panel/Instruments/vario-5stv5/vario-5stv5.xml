@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+ <path>vario-5stv5.ac</path>
+
+  <animation>
+    <object-name>Needle</object-name>
+    <object-name>Face2</object-name>
+    <object-name>Face</object-name>
+    <object-name>mc-cready</object-name>
+    <object-name>screws</object-name>
+
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>Face</object-name>
+    <object-name>Needle</object-name>
+    <emission>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+      <factor-prop>/sim/model//material/instruments/factor</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Needle</object-name>
+    <property>/instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
+    <interpolation>
+      <entry><ind> -1240.16 </ind><dep> -168.44 </dep></entry>
+      <entry><ind> -1181.10 </ind><dep> -160.42 </dep></entry>
+      <entry><ind>  -984.25 </ind><dep> -135.08 </dep></entry>
+      <entry><ind>  -787.50 </ind><dep> -107.91 </dep></entry>
+      <entry><ind>  -590.55 </ind><dep>  -80.53 </dep></entry>
+      <entry><ind>  -393.70 </ind><dep>  -53.99 </dep></entry>
+      <entry><ind>  -196.85 </ind><dep>  -26.80 </dep></entry>
+      <entry><ind>     0.00 </ind><dep>    0.00 </dep></entry>
+      <entry><ind>   196.85 </ind><dep>   26.80 </dep></entry>
+      <entry><ind>   393.70 </ind><dep>   53.99 </dep></entry>
+      <entry><ind>   590.55 </ind><dep>   80.53 </dep></entry>
+      <entry><ind>   787.50 </ind><dep>  107.91 </dep></entry>
+      <entry><ind>   984.25 </ind><dep>  135.08 </dep></entry>
+      <entry><ind>  1181.10 </ind><dep>  160.42 </dep></entry> 
+      <entry><ind>  1240.16 </ind><dep>  168.44 </dep></entry>
+    </interpolation>     
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+ 
+  <animation>
+    <type>rotate</type>
+    <object-name>mc-cready</object-name>
+    <property>/instrumentation/mc-cready/rot</property>
+    <factor>1</factor>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+ 
+  <animation>
+    <type>pick</type>
+    <object-name>mc-cready</object-name>
+    <action>
+      <name>increase mc-cready</name>
+      <button>0</button>
+      <button>3</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>/instrumentation/mc-cready/rot</property>
+        <step>2</step>
+        <min>0</min>
+        <max>360</max>
+        <wrap>true</wrap>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>mc-cready</object-name>
+    <action>
+      <name>decrease calibrate fine</name>
+      <button>1</button>
+      <button>4</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>/instrumentation/mc-cready/rot</property>
+        <step>-2</step>
+        <min>0</min>
+        <max>360</max>
+        <wrap>true</wrap>
+      </binding>
+    </action>
+  </animation>
+
+</PropertyList>
+

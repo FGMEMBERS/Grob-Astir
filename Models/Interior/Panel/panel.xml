@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>panel.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>panel</object-name>
+ 
+    <!-- Objets transparents -->
+  </animation>
+
+  <!-- Vario -->
+  <model>
+    <path>Aircraft/Grob-Astir/Models/Interior/Panel/Instruments/vario/ilec-sc7.xml</path>
+    <offsets>
+      <x-m>  0.141 </x-m>
+      <y-m>  0.099 </y-m>
+      <z-m> -0.057 </z-m>
+    </offsets>
+  </model>
+
+  <!-- vsi -->
+  <model>
+    <path>Aircraft/Grob-Astir/Models/Interior/Panel/Instruments/vsi/vsi.xml</path>
+    <offsets>
+      <x-m>  0.143 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.057 </z-m>
+    </offsets>
+  </model>
+
+  <!-- asi -->
+  <model>
+    <path>Aircraft/Grob-Astir/Models/Interior/Panel/Instruments/asi/asi.xml</path>
+    <offsets>
+      <x-m>  0.142 </x-m>
+      <y-m> -0.112 </y-m>
+      <z-m>  0.060 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Vario 5stv5 -->
+  <model>
+    <path>Aircraft/Grob-Astir/Models/Interior/Panel/Instruments/vario-5stv5/vario-5stv5.xml</path>
+    <offsets>
+      <x-m> 0.142 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.060 </z-m>
+    </offsets>
+  </model>
+
+  <!-- alt -->
+  <model>
+    <path>Aircraft/Grob-Astir/Models/Interior/Panel/Instruments/alt/alt.xml</path>
+    <offsets>
+      <x-m> 0.143 </x-m>
+      <y-m> 0.115 </y-m>
+      <z-m> 0.060 </z-m>
+    </offsets>
+  </model>
+
+</PropertyList>
+
