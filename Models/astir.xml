@@ -138,15 +138,21 @@
     <path>Aircraft/Grob-Astir/Models/Interior/interior.xml</path>
   </model>
 
-  <!-- Immatriculation
+  <!-- Une ombre pour OSG -->
+  <model>
+    <name>shadowOSG</name>
+    <path>Aircraft/Grob-Astir/Models/shadow.xml</path>
+    <offsets>
+      <x-m>  0.006376 </x-m>
+      <y-m>  0.000000 </y-m>
+      <z-m> -0.480000 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Immatriculation -->
   <model>
     <path>Aircraft/Grob-Astir/Models/Immat/immat.xml</path>
-    <offsets>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
-    </offsets>
-  </model> -->
+  </model>
 
   <!-- Les ailerons -->
   <animation>
@@ -282,7 +288,7 @@
     <object-name>roueC</object-name>
     <property>gear/gear[0]/position-norm</property>
     <interpolation>
-      <entry><ind> 0 </ind><dep> 0.141 </dep></entry>
+      <entry><ind> 0 </ind><dep> 0.151 </dep></entry>
       <entry><ind> 1 </ind><dep> 0.000 </dep></entry>
     </interpolation>
     <axis>

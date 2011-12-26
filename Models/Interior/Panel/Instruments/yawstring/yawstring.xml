@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>yawstring.ac</path>
+
+  <animation>
+    <object-name>tape</object-name>
+    <object-name>string1</object-name>
+    <object-name>string2</object-name>
+    <object-name>string3</object-name>
+    <object-name>string4</object-name>
+    <object-name>string5</object-name>
+  </animation>
+
+  <animation>
+    <name>AllString</name>
+    <object-name>string1</object-name>
+    <object-name>string2</object-name>
+    <object-name>string3</object-name>
+    <object-name>string4</object-name>
+    <object-name>string5</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>AllString</object-name>
+    <property>instrumentation/yawstring</property>
+    <axis>
+      <x>  0 </x>
+      <y>  0 </y>
+      <z> -1 </z>
+    </axis>
+  </animation>
+
+</PropertyList>
+
