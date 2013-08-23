@@ -4,7 +4,7 @@
 
     var airspeed = getprop("velocities/airspeed-kt");
     var severity = (airspeed / 30) * rand() ;
-    var position = getprop("orientation/side-slip-deg") + severity ;
+    var position = -getprop("orientation/side-slip-deg") + severity ;
 
     setprop("instrumentation/yawstring",position);
 	
