@@ -27,9 +27,9 @@
     <object-name>AllString</object-name>
     <property>instrumentation/yawstring</property>
     <axis>
-      <x>  0 </x>
-      <y>  0 </y>
-      <z> -1 </z>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
     </axis>
   </animation>
 

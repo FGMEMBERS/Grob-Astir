@@ -13,7 +13,7 @@
 
   <!-- Vario -->
   <model>
-    <path>Aircraft/Grob-Astir/Models/Interior/Panel/Instruments/vario/ilec-sc7.xml</path>
+    <path>Aircraft/Instruments-3d/glider/vario/ilec-sc7/ilec-sc7.xml</path>
     <offsets>
       <x-m>  0.141 </x-m>
       <y-m>  0.099 </y-m>
