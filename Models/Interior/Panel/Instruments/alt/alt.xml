@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
@@ -28,6 +28,15 @@
     <object-name>vitre</object-name>
   </animation>
 
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>vitre</object-name>
+  </effect>
+  
   <animation>
     <type>material</type>
     <object-name>alt-face</object-name>
@@ -35,11 +44,11 @@
     <object-name>needle-m</object-name>
     <object-name>needle-km</object-name>
     <emission>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+      <factor-prop>/sim/model//material/instruments/factor</factor-prop>
       <red>   0.50 </red>
       <green> 0.25 </green>
       <blue>  0.25 </blue>
-      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
-      <factor-prop>/sim/model//material/instruments/factor</factor-prop>
     </emission>
   </animation>
 
@@ -47,7 +56,7 @@
     <type>rotate</type>
     <object-name>needle-km</object-name>
     <property>/instrumentation/altimeter/indicated-altitude-ft</property>
-    <factor>0.010973</factor>
+    <factor> 0.010973 </factor>
     <axis>
       <x> -1 </x>
       <y>  0 </y>
@@ -59,7 +68,7 @@
     <type>rotate</type>
     <object-name>needle-m</object-name>
     <property>/instrumentation/altimeter/indicated-altitude-ft</property>
-    <factor>0.10973</factor>
+    <factor> 0.10973 </factor>
     <axis>
      <x> -1 </x>
      <y>  0 </y>
@@ -72,8 +81,8 @@
     <object-name>alt-face-press</object-name>
     <property>/instrumentation/altimeter/setting-inhg</property>
     <interpolation>
-      <entry><ind>28.05</ind><dep>0.0</dep></entry>
-      <entry><ind>31.01</ind><dep>282</dep></entry>
+      <entry><ind> 28.05 </ind><dep>   0 </dep></entry>
+      <entry><ind> 31.01 </ind><dep> 282 </dep></entry>
     </interpolation>
     <axis>
       <x> -1 </x>
@@ -122,4 +131,3 @@
   </animation>
 
 </PropertyList>
-

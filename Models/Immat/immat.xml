@@ -22,6 +22,7 @@
     <object-name>ImatWingR2</object-name>
     <object-name>ImatWingR3</object-name>
     <object-name>ImatWingR4</object-name>
+    <object-name>ImatWingR4-2</object-name>
     <object-name>ImatWingR5</object-name>
     <object-name>ImatWingR6</object-name>
   </animation>
@@ -44,6 +45,7 @@
     <object-name>ImatWingR2</object-name>
     <object-name>ImatWingR3</object-name>
     <object-name>ImatWingR4</object-name>
+    <object-name>ImatWingR4-2</object-name>
     <object-name>ImatWingR5</object-name>
     <object-name>ImatWingR6</object-name>
   </animation>
@@ -241,6 +243,7 @@
   <animation> 
     <type>textranslate</type> 
     <object-name>ImatWingR4</object-name> 
+    <object-name>ImatWingR4-2</object-name> 
     <property>sim/multiplay/generic/int[3]</property>
     <factor> 0.0244140625 </factor>
     <axis> 
@@ -274,5 +277,51 @@
     </axis> 
   </animation>
 
+  <!-- Flexions des ailes -->
+  <animation>
+    <type>rotate</type>
+    <object-name>ImatWingR1</object-name>      
+    <object-name>ImatWingR2</object-name>      
+    <object-name>ImatWingR3</object-name>
+    <object-name>ImatWingR4</object-name>
+    <object-name>ImatWingR4-2</object-name>
+    <object-name>ImatWingR5</object-name>
+    <object-name>ImatWingR6</object-name>
+    <property>sim/multiplay/generic/float[3]</property>
+    <interpolation>
+      <entry><ind> 0.000 </ind><dep>  1 </dep></entry>
+      <entry><ind> 0.333 </ind><dep>  0 </dep></entry>
+      <entry><ind> 1.000 </ind><dep> -1 </dep></entry>
+    </interpolation>
+    <axis>
+      <x1-m> -1.27517 </x1-m>
+      <y1-m> -0.28406 </y1-m>
+      <z1-m> -0.14194 </z1-m>
+      <x2-m> -0.26835 </x2-m>
+      <y2-m> -0.17088 </y2-m>
+      <z2-m> -0.17718 </z2-m>
+    </axis>
+  </animation>
+ 
+  <animation>
+    <type>rotate</type>
+    <object-name>ImatWingR4-2</object-name>
+    <object-name>ImatWingR5</object-name>
+    <object-name>ImatWingR6</object-name>
+    <property>sim/multiplay/generic/float[3]</property>
+    <interpolation>
+      <entry><ind> 0.000 </ind><dep>  1.5 </dep></entry>
+      <entry><ind> 0.333 </ind><dep>  0.0 </dep></entry>
+      <entry><ind> 1.000 </ind><dep> -1.5 </dep></entry>
+    </interpolation>
+    <axis>
+      <x1-m> -1.22741 </x1-m>
+      <y1-m> -2.05640 </y1-m>
+      <z1-m> -0.07669 </z1-m>
+      <x2-m> -0.30070 </x2-m>
+      <y2-m> -2.05640 </y2-m>
+      <z2-m> -0.09514 </z2-m>
+    </axis>
+  </animation>
+ 
 </PropertyList>
-

@@ -30,7 +30,12 @@
   <animation>
     <object-name>fuselage</object-name>
     <object-name>cache</object-name>
-    <object-name>ailes</object-name>
+    <object-name>ailesL0</object-name>
+    <object-name>ailesR0</object-name>
+    <object-name>ailesL1</object-name>
+    <object-name>ailesR1</object-name>
+    <object-name>ailesL2</object-name>
+    <object-name>ailesR2</object-name>
     <object-name>aileronG</object-name>
     <object-name>aileronD</object-name>
     <object-name>spoilerG</object-name>
@@ -43,6 +48,10 @@
     <object-name>porteD</object-name>
 
     <object-name>trous</object-name>
+    <object-name>trousspoilerG</object-name>
+    <object-name>trousspoilerD</object-name>
+    <object-name>trousaileronG</object-name>
+    <object-name>trousaileronD</object-name>
     <object-name>roueC</object-name>
     <object-name>roueA</object-name>
 
@@ -54,7 +63,12 @@
     <type>material</type>
     <object-name>fuselage</object-name>
     <object-name>cache</object-name>
-    <object-name>ailes</object-name>
+    <object-name>ailesL0</object-name>
+    <object-name>ailesR0</object-name>
+    <object-name>ailesL1</object-name>
+    <object-name>ailesR1</object-name>
+    <object-name>ailesL2</object-name>
+    <object-name>ailesR2</object-name>
     <object-name>aileronG</object-name>
     <object-name>aileronD</object-name>
     <object-name>spoilerG</object-name>
@@ -67,48 +81,41 @@
     <object-name>porteD</object-name>
 
     <object-name>trous</object-name>
+    <object-name>trousspoilerG</object-name>
+    <object-name>trousspoilerD</object-name>
+    <object-name>trousaileronG</object-name>
+    <object-name>trousaileronD</object-name>
     <object-name>roueC</object-name>
     <object-name>roueA</object-name>
 
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
-<!--
-    <diffuse>
-      <red-prop>diffuse/red</red-prop>
-      <green-prop>diffuse/green</green-prop>
-      <blue-prop>diffuse/blue</blue-prop>
-    </diffuse>
-
-    <ambient>
-      <red-prop>ambient/red</red-prop>
-      <green-prop>ambient/green</green-prop>
-      <blue-prop>ambient/blue</blue-prop>
-    </ambient>
--->
     <specular>
       <red-prop>specular/red</red-prop>
       <green-prop>specular/green</green-prop>
       <blue-prop>specular/blue</blue-prop>
     </specular>
-
     <emission>
       <red-prop>emission/red</red-prop>
       <green-prop>emission/green</green-prop>
       <blue-prop>emission/blue</blue-prop>
     </emission>
-<!--
-    <shininess>
-      <shininess-prop>shininess</shininess-prop>
-    </shininess>
--->
   </animation>
 
   <effect>
     <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <condition>
+      <not><property>sim/rendering/rembrandt/enabled</property></not>
+    </condition>
     <object-name>fuselage</object-name>
     <object-name>cache</object-name>
-    <object-name>ailes</object-name>
+    <object-name>ailesL0</object-name>
+    <object-name>ailesR0</object-name>
+    <object-name>ailesL1</object-name>
+    <object-name>ailesR1</object-name>
+    <object-name>ailesL2</object-name>
+    <object-name>ailesR2</object-name>
     <object-name>aileronG</object-name>
     <object-name>aileronD</object-name>
     <object-name>spoilerG</object-name>
@@ -121,6 +128,31 @@
     <object-name>porteD</object-name>
   </effect>
 
+  <effect>
+    <inherits-from>Effects/model-combined-deferred</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>fuselage</object-name>
+    <object-name>cache</object-name>
+    <object-name>ailesL0</object-name>
+    <object-name>ailesR0</object-name>
+    <object-name>ailesL1</object-name>
+    <object-name>ailesR1</object-name>
+    <object-name>ailesL2</object-name>
+    <object-name>ailesR2</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>spoilerG</object-name>
+    <object-name>spoilerD</object-name>
+    <object-name>ailes2</object-name>
+    <object-name>direction</object-name>
+    <object-name>profondeur</object-name>
+    <object-name>tourverriere</object-name>
+    <object-name>porteG</object-name>
+    <object-name>porteD</object-name>
+  </effect>
+  
   <animation>
     <type>shader</type>
     <shader>chrome</shader>
@@ -133,14 +165,17 @@
     <object-name>vitres</object-name>
   </animation>
 
-  <!-- Intérieur -->
-  <model>
-    <path>Aircraft/Grob-Astir/Models/Interior/interior.xml</path>
-  </model>
-
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>vitres</object-name>
+  </effect>
+  
   <!-- Une ombre pour OSG -->
   <model>
-    <name>shadowOSG</name>
     <path>Aircraft/Grob-Astir/Models/shadow.xml</path>
     <offsets>
       <x-m>  0.006376 </x-m>
@@ -148,17 +183,172 @@
       <z-m> -0.480000 </z-m>
     </offsets>
   </model>
+  
+  <!-- Intérieur -->
+  <model>
+    <name>Interieur</name>
+    <path>Aircraft/Grob-Astir/Models/Interior/interior.xml</path>
+  </model>
 
+  <!-- For Rembrandt -->
+  <animation>
+    <type>noshadow</type>
+    <object-name>Interieur</object-name>
+  </animation>
+  
   <!-- Immatriculation -->
   <model>
     <path>Aircraft/Grob-Astir/Models/Immat/immat.xml</path>
   </model>
 
-  <!-- Les ailerons -->
+  <!-- Flexions des ailes -->
+  <!-- Left -->
+  <animation>
+    <type>rotate</type>
+    <object-name>ailesL0</object-name>      
+    <object-name>ailesL1</object-name>      
+    <object-name>ailesL2</object-name>
+    <object-name>trousspoilerG</object-name>
+    <object-name>spoilerG</object-name>
+    <object-name>trousaileronG</object-name>
+    <object-name>aileronG</object-name>      
+    <property>sim/multiplay/generic/float[3]</property>
+    <interpolation>
+      <entry><ind> 0.000 </ind><dep>  1 </dep></entry>
+      <entry><ind> 0.333 </ind><dep>  0 </dep></entry>
+      <entry><ind> 1.000 </ind><dep> -1 </dep></entry>
+    </interpolation>
+    <axis>
+      <x1-m> -1.27517 </x1-m>
+      <y1-m> -0.28406 </y1-m>
+      <z1-m> -0.14194 </z1-m>
+      <x2-m> -0.26835 </x2-m>
+      <y2-m> -0.17088 </y2-m>
+      <z2-m> -0.17718 </z2-m>
+    </axis>
+  </animation>
+ 
+  <animation>
+    <type>rotate</type>
+    <object-name>ailesL1</object-name>      
+    <object-name>ailesL2</object-name>
+    <object-name>trousspoilerG</object-name>
+    <object-name>spoilerG</object-name>      
+    <object-name>trousaileronG</object-name>
+    <object-name>aileronG</object-name>      
+    <property>sim/multiplay/generic/float[3]</property>
+    <interpolation>
+      <entry><ind> 0.000 </ind><dep>  1.5 </dep></entry>
+      <entry><ind> 0.333 </ind><dep>  0.0 </dep></entry>
+      <entry><ind> 1.000 </ind><dep> -1.5 </dep></entry>
+    </interpolation>
+    <axis>
+      <x1-m> -1.22741 </x1-m>
+      <y1-m> -2.05640 </y1-m>
+      <z1-m> -0.07669 </z1-m>
+      <x2-m> -0.30070 </x2-m>
+      <y2-m> -2.05640 </y2-m>
+      <z2-m> -0.09514 </z2-m>
+    </axis>
+  </animation>
+ 
+  <animation>
+    <type>rotate</type>
+    <object-name>ailesL2</object-name>      
+    <object-name>trousaileronG</object-name>
+    <object-name>aileronG</object-name>      
+    <property>sim/multiplay/generic/float[3]</property>
+    <interpolation>
+      <entry><ind> 0.000 </ind><dep>  2 </dep></entry>
+      <entry><ind> 0.333 </ind><dep>  0 </dep></entry>
+      <entry><ind> 1.000 </ind><dep> -2 </dep></entry>
+    </interpolation>
+    <axis>
+      <x1-m> -1.17122 </x1-m>
+      <y1-m> -4.41838 </y1-m>
+      <z1-m>  0.02317 </z1-m>
+      <x2-m> -0.34123 </x2-m>
+      <y2-m> -4.41896 </y2-m>
+      <z2-m>  0.00765 </z2-m>
+    </axis>
+  </animation>
+ 
+ <!-- Right -->
+  <animation>
+    <type>rotate</type>
+    <object-name>ailesR0</object-name>      
+    <object-name>ailesR1</object-name>      
+    <object-name>ailesR2</object-name>      
+    <object-name>trousspoilerD</object-name>
+    <object-name>spoilerD</object-name>      
+    <object-name>trousaileronD</object-name>
+    <object-name>aileronD</object-name>      
+    <property>sim/multiplay/generic/float[3]</property>
+    <interpolation>
+      <entry><ind> 0.000 </ind><dep>  1 </dep></entry>
+      <entry><ind> 0.333 </ind><dep>  0 </dep></entry>
+      <entry><ind> 1.000 </ind><dep> -1 </dep></entry>
+    </interpolation>
+    <axis>
+      <x1-m> -0.26835 </x1-m>
+      <y1-m>  0.17088 </y1-m>
+      <z1-m> -0.17718 </z1-m>
+      <x2-m> -1.27517 </x2-m>
+      <y2-m>  0.28406 </y2-m>
+      <z2-m> -0.14194 </z2-m>
+    </axis>
+  </animation>
+ 
+  <animation>
+    <type>rotate</type>
+    <object-name>ailesR1</object-name>      
+    <object-name>ailesR2</object-name>      
+    <object-name>trousspoilerD</object-name>
+    <object-name>spoilerD</object-name>      
+    <object-name>trousaileronD</object-name>
+    <object-name>aileronD</object-name>      
+    <property>sim/multiplay/generic/float[3]</property>
+    <interpolation>
+      <entry><ind> 0.000 </ind><dep>  1.5 </dep></entry>
+      <entry><ind> 0.333 </ind><dep>  0.0 </dep></entry>
+      <entry><ind> 1.000 </ind><dep> -1.5 </dep></entry>
+    </interpolation>
+    <axis>
+      <x1-m> -0.30070 </x1-m>
+      <y1-m>  2.05640 </y1-m>
+      <z1-m> -0.09514 </z1-m>
+      <x2-m> -1.22741 </x2-m>
+      <y2-m>  2.05640 </y2-m>
+      <z2-m> -0.07669 </z2-m>
+    </axis>
+  </animation>
+ 
+  <animation>
+    <type>rotate</type>
+    <object-name>ailesR2</object-name>      
+    <object-name>trousaileronD</object-name>
+    <object-name>aileronD</object-name>      
+    <property>sim/multiplay/generic/float[3]</property>
+    <interpolation>
+      <entry><ind> 0.000 </ind><dep>  2 </dep></entry>
+      <entry><ind> 0.333 </ind><dep>  0 </dep></entry>
+      <entry><ind> 1.000 </ind><dep> -2 </dep></entry>
+    </interpolation>
+    <axis>
+      <x1-m> -0.34123 </x1-m>
+      <y1-m>  4.41896 </y1-m>
+      <z1-m>  0.00765 </z1-m>
+      <x2-m> -1.17122 </x2-m>
+      <y2-m>  4.41838 </y2-m>
+      <z2-m>  0.02317 </z2-m>
+    </axis>
+  </animation>
+ 
+ <!-- Ailerons -->
   <animation>
     <type>rotate</type>
     <object-name>aileronG</object-name>      
-    <property>surface-positions/left-aileron-pos-norm</property>
+    <property>surface-positions/right-aileron-pos-norm</property>
     <factor> 10 </factor>
     <axis>
       <x1-m> -0.769 </x1-m>
@@ -169,7 +359,7 @@
       <z2-m>  0.018 </z2-m>
     </axis>
   </animation>
- 
+  
   <animation>
     <type>rotate</type>
     <object-name>aileronD</object-name>      
@@ -356,4 +546,3 @@
   </animation>
 
 </PropertyList>
-

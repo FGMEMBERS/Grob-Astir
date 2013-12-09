@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
@@ -8,6 +8,8 @@
     <!-- Objets opaques -->
     <object-name>interieur</object-name>
     <object-name>inttour</object-name>
+    <object-name>sides</object-name>
+    <object-name>seat</object-name>
     <object-name>inttourverriere</object-name>
 
     <!-- Objets transparents -->
@@ -26,17 +28,26 @@
     <object-name>intverriere</object-name>
   </animation>
 
-	<!-- Yaw String -->
-	<model>
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>intverriere</object-name>
+  </effect>
+  
+  <!-- Yaw String -->
+  <model>
     <name>yawstring</name>
-		<path>Aircraft/Grob-Astir/Models/Interior/Panel/Instruments/yawstring/yawstring.xml</path>
-		<offsets>
-			<x-m> -2.771 </x-m>
-			<y-m>  0.000 </y-m>
-			<z-m> -0.005 </z-m>
-			<pitch-deg> -10 </pitch-deg>
-		</offsets>
-	</model>
+    <path>Aircraft/Grob-Astir/Models/Interior/Panel/Instruments/yawstring/yawstring.xml</path>
+    <offsets>
+      <x-m> -2.771 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.005 </z-m>
+      <pitch-deg> -10 </pitch-deg>
+    </offsets>
+  </model>
 
   <!-- Pilote -->
   <model>
@@ -82,4 +93,3 @@
   </animation>
 
 </PropertyList>
-

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
@@ -39,6 +39,15 @@
     <object-name>vitre</object-name>
   </animation>
 
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>vitre</object-name>
+  </effect>
+  
   <animation>
     <type>material</type>
     <object-name>face</object-name>
@@ -238,14 +247,14 @@
     <object-name>decr-audio</object-name>
     <visible>false</visible>
     <action>
- 	    <button>0</button>
-      <binding>	    
-	      <command>property-adjust</command>
-			  <property>instrumentation/ilec-sc7/audio</property>
-			  <step>-1</step>
-			  <min>0</min>
-			  <max>2</max>
-			  <wrap>false</wrap>		
+      <button>0</button>
+      <binding>     
+        <command>property-adjust</command>
+        <property>instrumentation/ilec-sc7/audio</property>
+        <step>-1</step>
+        <min>0</min>
+        <max>2</max>
+        <wrap>false</wrap>    
       </binding>           
     </action>
   </animation> 
@@ -277,35 +286,35 @@
     <object-name>incr-mode</object-name>
     <visible>false</visible>
     <action>
- 	    <button>0</button>
-      <binding>	    
-	      <command>property-adjust</command>
-		    <property>instrumentation/ilec-sc7/mode</property>
-		    <step>1</step>
-		    <min>0</min>
-		    <max>2</max>
-		    <wrap>false</wrap>		
+      <button>0</button>
+      <binding>     
+        <command>property-adjust</command>
+        <property>instrumentation/ilec-sc7/mode</property>
+        <step>1</step>
+        <min>0</min>
+        <max>2</max>
+        <wrap>false</wrap>    
       </binding>           
     </action>
   </animation> 
-    
+  
   <animation>
     <type>pick</type>
     <object-name>decr-mode</object-name>
     <visible>false</visible>
     <action>
- 	    <button>0</button>
-      <binding>	    
-	      <command>property-adjust</command>
-		    <property>instrumentation/ilec-sc7/mode</property>
-		    <step>-1</step>
-		    <min>0</min>
-		    <max>2</max>
-		    <wrap>false</wrap>		
+      <button>0</button>
+      <binding>     
+        <command>property-adjust</command>
+        <property>instrumentation/ilec-sc7/mode</property>
+        <step>-1</step>
+        <min>0</min>
+        <max>2</max>
+        <wrap>false</wrap>    
       </binding>           
     </action>
   </animation> 
-    
+  
   <!-- sensitivity switch -->  
   <animation>
     <type>rotate</type>
@@ -332,35 +341,35 @@
     <object-name>incr-sens</object-name>
     <visible>false</visible>
     <action>
- 	    <button>0</button>
-      <binding>	    
-	      <command>property-adjust</command>
-			  <property>instrumentation/ilec-sc7/sensitivity</property>
-			  <step>1</step>
-			  <min>0</min>
-			  <max>1</max>
-			  <wrap>false</wrap>		
+      <button>0</button>
+      <binding>     
+        <command>property-adjust</command>
+        <property>instrumentation/ilec-sc7/sensitivity</property>
+        <step>1</step>
+        <min>0</min>
+        <max>1</max>
+        <wrap>false</wrap>    
       </binding>           
     </action>
   </animation> 
-    
+  
   <animation>
     <type>pick</type>
     <object-name>decr-sens</object-name>
     <visible>false</visible>
     <action>
- 	    <button>0</button>
-      <binding>	    
+      <button>0</button>
+      <binding>     
         <command>property-adjust</command>
-			  <property>instrumentation/ilec-sc7/sensitivity</property>
-			  <step>-1</step>
-			  <min>0</min>
-			  <max>1</max>
-			  <wrap>false</wrap>		
+        <property>instrumentation/ilec-sc7/sensitivity</property>
+        <step>-1</step>
+        <min>0</min>
+        <max>1</max>
+        <wrap>false</wrap>    
       </binding>           
     </action>
   </animation>    
-    
+  
   <!-- digits -->  
   <animation>
     <type>textranslate</type>
@@ -370,9 +379,9 @@
     <step>0.1</step>
     <bias>0.005</bias>
     <axis>
-      <x>1</x>
-      <y>0</y>
-      <z>0</z>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -384,9 +393,9 @@
     <step>1</step>
     <bias>0.005</bias>
     <axis>
-      <x>1</x>
-      <y>0</y>
-      <z>0</z>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
     
@@ -405,5 +414,3 @@
   </animation>
 
 </PropertyList>
-
-
