@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- <PropertyList include="astir-jsbsim-cnf.xml"> -->
+<PropertyList include="astir-yasim-cnf.xml">
+
+  <sim>
+
+    <description>Grob 102 Jean's ASTIR (YASim)</description>
+    <author>BARANGER Emmanuel (3D) / OO ZVY (FDM)</author>
+
+    <status>beta production</status>
+    <rating>
+     <FDM type="int">     2 </FDM>
+     <systems type="int"> 2 </systems>
+     <cockpit type="int"> 2 </cockpit>
+     <model type="int">   4 </model>
+    </rating>
+
+  </sim>
+
+</PropertyList>
+

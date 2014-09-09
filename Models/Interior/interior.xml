@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>interior.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>interieur</object-name>
+    <object-name>inttour</object-name>
+    <object-name>sides</object-name>
+    <object-name>seat</object-name>
+    <object-name>inttourverriere</object-name>
+
+    <!-- Objets transparents -->
+    <object-name>intverriere</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>intverriere</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>intverriere</object-name>
+  </animation>
+
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>intverriere</object-name>
+  </effect>
+  
+  <!-- Yaw String -->
+  <model>
+    <name>yawstring</name>
+    <path>Aircraft/Grob-Astir/Models/Interior/Panel/Instruments/yawstring/yawstring.xml</path>
+    <offsets>
+      <x-m> -2.771 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.005 </z-m>
+      <pitch-deg> -10 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- Pilote -->
+  <model>
+    <path>Aircraft/Grob-Astir/Models/Pilot/pilot.xml</path>
+    <offsets>
+      <x-m> -2.036 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.361 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Planche de bord avant -->
+  <model>
+    <path>Aircraft/Grob-Astir/Models/Interior/Panel/panel.xml</path>
+    <offsets>
+      <x-m> -2.667 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.147 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Canopy -->
+  <animation>
+    <name>IntTotaleVitre</name>
+    <object-name>inttourverriere</object-name>
+    <object-name>intverriere</object-name>
+    <object-name>yawstring</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>IntTotaleVitre</object-name>
+    <property>instrumentation/doors/crew/position-norm</property>
+    <factor> -85 </factor>
+    <axis>
+      <x1-m> -2.188 </x1-m>
+      <y1-m>  0.286 </y1-m>
+      <z1-m> -0.235 </z1-m>
+      <x2-m> -1.558 </x2-m>
+      <y2-m>  0.305 </y2-m>
+      <z2-m> -0.209 </z2-m>
+    </axis>
+  </animation>
+
+</PropertyList>
