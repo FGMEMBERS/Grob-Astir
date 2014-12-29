@@ -4,27 +4,106 @@
 more to come :-)
 -->
 <PropertyList>
-
-  <path>dr400.ac</path>
   
+  <path>dr400.ac</path>
   <offsets>
-    <x-m>0.0</x-m>
-    <y-m>0.0</y-m>
-    <z-m>1.0</z-m>
-    <pitch-deg>0</pitch-deg> 
+    <z-m>1</z-m>
   </offsets>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>fuselage</object-name>
+    <object-name>ailes</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>voletG</object-name>
+    <object-name>voletD</object-name>
+    <object-name>profondeur</object-name>
+    <object-name>trimprof</object-name>
+    <object-name>direction</object-name>
+    <object-name>toitverriere</object-name>
+    <object-name>tourverriere</object-name>
+    <object-name>bol</object-name>
+    <object-name>protege</object-name>
+    <object-name>antenne</object-name>
+    <object-name>axeA</object-name>
+    <object-name>cacheA</object-name>
+    <object-name>axeG</object-name>
+    <object-name>cacheG</object-name>
+    <object-name>axeD</object-name>
+    <object-name>cacheD</object-name>
+    
+    <object-name>roueA</object-name>
+    <object-name>roueG</object-name>
+    <object-name>roueG</object-name>
+    <object-name>helice</object-name>
+    <object-name>echappe</object-name>
+    <object-name>tringleG</object-name>
+    <object-name>tringleD</object-name>
+    <object-name>trous</object-name>
+    
+    <!-- Objets transparents -->
+    <object-name>verriere</object-name>
+    <object-name>verriere2</object-name>
+    <object-name>lampe</object-name>
+    <object-name>lampeG</object-name>
+    <object-name>lampeD</object-name>
+    <object-name>lampetoit</object-name>
+    <object-name>propdisc</object-name>
+    <object-name>propblur</object-name>
+  </animation>
+  
+  <effect>
+    <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <object-name>fuselage</object-name>
+    <object-name>ailes</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>voletG</object-name>
+    <object-name>voletD</object-name>
+    <object-name>profondeur</object-name>
+    <object-name>trimprof</object-name>
+    <object-name>direction</object-name>
+    <object-name>toitverriere</object-name>
+    <object-name>tourverriere</object-name>
+    <object-name>bol</object-name>
+    <object-name>protege</object-name>
+    <object-name>antenne</object-name>
+    <object-name>axeA</object-name>
+    <object-name>cacheA</object-name>
+    <object-name>axeG</object-name>
+    <object-name>cacheG</object-name>
+    <object-name>axeD</object-name>
+    <object-name>cacheD</object-name>
+  </effect>
+  
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/Diamond-Da40/Models/Effects/Glass/glass</inherits-from>
+    <object-name>verriere</object-name>
+    <object-name>verriere2</object-name>
+    <object-name>lampe</object-name>
+  </effect>
+  
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>verriere</object-name>
+    <object-name>verriere2</object-name>
+    <object-name>lampe</object-name>
+    <object-name>lampeG</object-name>
+    <object-name>lampeD</object-name>
+    <object-name>lampetoit</object-name>
+    <object-name>propdisc</object-name>
+    <object-name>propblur</object-name>
+  </effect>
   
   <!-- animations -->
   <animation>
-    <type>select</type>
+    <name>HeliceComplete</name>
     <object-name>propdisc</object-name>
     <object-name>propblur</object-name>
-    <condition>
-      <greater-than>
-        <property>sim/glider/dragger/robot/run</property>
-        <value>0.50</value>
-      </greater-than>
-    </condition>
+    <object-name>helice</object-name>
+    <object-name>bol</object-name>
   </animation>
   
   <animation>
@@ -39,10 +118,20 @@ more to come :-)
   </animation>
   
   <animation>
-    <type>spin</type>
+    <type>select</type>
     <object-name>propdisc</object-name>
     <object-name>propblur</object-name>
-    <object-name>helice</object-name>
+    <condition>
+      <greater-than>
+        <property>sim/glider/dragger/robot/run</property>
+        <value>0.50</value>
+      </greater-than>
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>spin</type>
+    <object-name>HeliceComplete</object-name>
     <property>sim/glider/dragger/robot/run</property>
     <factor> 5 </factor>
     <center>
@@ -56,5 +145,5 @@ more to come :-)
       <z>  0 </z>
     </axis>
   </animation>
-
+  
 </PropertyList>

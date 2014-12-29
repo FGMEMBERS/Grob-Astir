@@ -16,24 +16,15 @@
     <object-name>intverriere</object-name>
   </animation>
 
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/Grob-Astir/Models/Effects/Glass/glass</inherits-from>
     <object-name>intverriere</object-name>
-  </animation>
-
-  <animation>
-    <type>noshadow</type>
-    <object-name>intverriere</object-name>
-  </animation>
-
+  </effect>
+  
   <!-- working for Rembrandt -->
   <effect>
     <inherits-from>Effects/model-transparent</inherits-from>
-    <condition>
-      <property>sim/rendering/rembrandt/enabled</property>
-    </condition>
     <object-name>intverriere</object-name>
   </effect>
   
@@ -78,9 +69,22 @@
   </animation>
 
   <animation>
+    <type>pick</type>
+    <object-name>IntTotaleVitre</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>  
+      <binding>
+        <command>nasal</command>
+        <script>doors.crew.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
     <type>rotate</type>
     <object-name>IntTotaleVitre</object-name>
-    <property>instrumentation/doors/crew/position-norm</property>
+    <property>sim/model/door-positions/crew/position-norm</property>
     <factor> -85 </factor>
     <axis>
       <x1-m> -2.188 </x1-m>

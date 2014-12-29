@@ -13,9 +13,9 @@
       var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
       var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
       
-      var crew_door = self.getNode("instrumentation/doors/crew/position-norm", 1);
-      var passenger_door = self.getNode("instrumentation/doors/passenger/position-norm", 1);
-    
+      var crew_door = self.getNode("sim/model/door-positions/crew/position-norm", 1);
+      var passenger_door = self.getNode("sim/model/door-positions/passenger/position-norm", 1);
+      
       crew_door.alias(float_0);
       passenger_door.alias(float_1);
     </load>
@@ -96,18 +96,10 @@
       <green-prop>specular/green</green-prop>
       <blue-prop>specular/blue</blue-prop>
     </specular>
-    <emission>
-      <red-prop>emission/red</red-prop>
-      <green-prop>emission/green</green-prop>
-      <blue-prop>emission/blue</blue-prop>
-    </emission>
   </animation>
 
   <effect>
     <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
-    <condition>
-      <not><property>sim/rendering/rembrandt/enabled</property></not>
-    </condition>
     <object-name>fuselage</object-name>
     <object-name>cache</object-name>
     <object-name>ailesL0</object-name>
@@ -127,50 +119,16 @@
     <object-name>porteG</object-name>
     <object-name>porteD</object-name>
   </effect>
-
-  <effect>
-    <inherits-from>Effects/model-combined-deferred</inherits-from>
-    <condition>
-      <property>sim/rendering/rembrandt/enabled</property>
-    </condition>
-    <object-name>fuselage</object-name>
-    <object-name>cache</object-name>
-    <object-name>ailesL0</object-name>
-    <object-name>ailesR0</object-name>
-    <object-name>ailesL1</object-name>
-    <object-name>ailesR1</object-name>
-    <object-name>ailesL2</object-name>
-    <object-name>ailesR2</object-name>
-    <object-name>aileronG</object-name>
-    <object-name>aileronD</object-name>
-    <object-name>spoilerG</object-name>
-    <object-name>spoilerD</object-name>
-    <object-name>ailes2</object-name>
-    <object-name>direction</object-name>
-    <object-name>profondeur</object-name>
-    <object-name>tourverriere</object-name>
-    <object-name>porteG</object-name>
-    <object-name>porteD</object-name>
-  </effect>
-  
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-    <object-name>vitres</object-name>
-  </animation>
-
-  <animation>
-    <type>noshadow</type>
-    <object-name>vitres</object-name>
-  </animation>
 
   <!-- working for Rembrandt -->
   <effect>
+    <inherits-from>Aircraft/Grob-Astir/Models/Effects/Glass/glass</inherits-from>
+    <object-name>vitres</object-name>
+  </effect>
+  
+  <!-- working for Rembrandt -->
+  <effect>
     <inherits-from>Effects/model-transparent</inherits-from>
-    <condition>
-      <property>sim/rendering/rembrandt/enabled</property>
-    </condition>
     <object-name>vitres</object-name>
   </effect>
   
@@ -186,16 +144,10 @@
   
   <!-- Intérieur -->
   <model>
-    <name>Interieur</name>
+    <usage>interior</usage>
     <path>Aircraft/Grob-Astir/Models/Interior/interior.xml</path>
   </model>
 
-  <!-- For Rembrandt -->
-  <animation>
-    <type>noshadow</type>
-    <object-name>Interieur</object-name>
-  </animation>
-  
   <!-- Immatriculation -->
   <model>
     <path>Aircraft/Grob-Astir/Models/Immat/immat.xml</path>
@@ -212,7 +164,7 @@
     <object-name>spoilerG</object-name>
     <object-name>trousaileronG</object-name>
     <object-name>aileronG</object-name>      
-    <property>sim/multiplay/generic/float[3]</property>
+    <property>sim/multiplay/generic/float[8]</property>
     <interpolation>
       <entry><ind> 0.000 </ind><dep>  1 </dep></entry>
       <entry><ind> 0.333 </ind><dep>  0 </dep></entry>
@@ -236,7 +188,7 @@
     <object-name>spoilerG</object-name>      
     <object-name>trousaileronG</object-name>
     <object-name>aileronG</object-name>      
-    <property>sim/multiplay/generic/float[3]</property>
+    <property>sim/multiplay/generic/float[8]</property>
     <interpolation>
       <entry><ind> 0.000 </ind><dep>  1.5 </dep></entry>
       <entry><ind> 0.333 </ind><dep>  0.0 </dep></entry>
@@ -257,7 +209,7 @@
     <object-name>ailesL2</object-name>      
     <object-name>trousaileronG</object-name>
     <object-name>aileronG</object-name>      
-    <property>sim/multiplay/generic/float[3]</property>
+    <property>sim/multiplay/generic/float[8]</property>
     <interpolation>
       <entry><ind> 0.000 </ind><dep>  2 </dep></entry>
       <entry><ind> 0.333 </ind><dep>  0 </dep></entry>
@@ -283,7 +235,7 @@
     <object-name>spoilerD</object-name>      
     <object-name>trousaileronD</object-name>
     <object-name>aileronD</object-name>      
-    <property>sim/multiplay/generic/float[3]</property>
+    <property>sim/multiplay/generic/float[8]</property>
     <interpolation>
       <entry><ind> 0.000 </ind><dep>  1 </dep></entry>
       <entry><ind> 0.333 </ind><dep>  0 </dep></entry>
@@ -307,7 +259,7 @@
     <object-name>spoilerD</object-name>      
     <object-name>trousaileronD</object-name>
     <object-name>aileronD</object-name>      
-    <property>sim/multiplay/generic/float[3]</property>
+    <property>sim/multiplay/generic/float[8]</property>
     <interpolation>
       <entry><ind> 0.000 </ind><dep>  1.5 </dep></entry>
       <entry><ind> 0.333 </ind><dep>  0.0 </dep></entry>
@@ -328,7 +280,7 @@
     <object-name>ailesR2</object-name>      
     <object-name>trousaileronD</object-name>
     <object-name>aileronD</object-name>      
-    <property>sim/multiplay/generic/float[3]</property>
+    <property>sim/multiplay/generic/float[8]</property>
     <interpolation>
       <entry><ind> 0.000 </ind><dep>  2 </dep></entry>
       <entry><ind> 0.333 </ind><dep>  0 </dep></entry>
@@ -531,9 +483,22 @@
   </animation>
 
   <animation>
+    <type>pick</type>
+    <object-name>TotaleVitre</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>  
+      <binding>
+        <command>nasal</command>
+        <script>doors.crew.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
     <type>rotate</type>
     <object-name>TotaleVitre</object-name>
-    <property>instrumentation/doors/crew/position-norm</property>
+    <property>sim/model/door-positions/crew/position-norm</property>
     <factor> -85 </factor>
     <axis>
       <x1-m> -2.188 </x1-m>
