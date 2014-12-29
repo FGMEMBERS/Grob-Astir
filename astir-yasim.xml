@@ -12,7 +12,7 @@
     Stall speed   :    59 km/h (  32 kt      ) without airbrakes
     Maximum speed :   170 km/h (  92 kt      )
 -->
-<airplane mass="551">
+<airplane mass="551" version="YASIM_VERSION_CURRENT">
 
   <!-- Approach configuration -->
   <approach speed="30" aoa="4" glide-angle="5">
