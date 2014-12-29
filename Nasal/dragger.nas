@@ -145,8 +145,8 @@ var createDragRobot = func {
   # local variables
   var ac_pos = geo.aircraft_position();                      # get position of aircraft
   var ac_hd  = getprop("orientation/heading-deg");           # get heading of aircraft
-  var dip    = ac_pos.apply_course_distance( ac_hd , 15 );   # initial dragger position, 
-                                                               # 15m in front of glider
+  var dip    = ac_pos.apply_course_distance( ac_hd , 90);    # initial dragger position, 
+                                                             # 90m in front of glider
   var dipalt_m = geo.elevation(dip.lat(), dip.lon());        # height at dragger position
   var wp0_geo = geo.Coord.new();                             # current processed ai-plane
   
@@ -176,7 +176,7 @@ var createDragRobot = func {
   
   dragger_mod.model = dragger_mod.getChild("model", freeModelid, 1);
 ############################################################################################## Specific to airplane (better in Generic I think)
-  dragger_mod.model.getNode("path", 1).setValue("Aircraft/ASK21-MI/Models/Dragger/robot.xml");
+  dragger_mod.model.getNode("path", 1).setValue("Aircraft/Grob-Astir/Models/Dragger/robot.xml");
 ##############################################################################################
   dragger_mod.model.getNode("longitude-deg-prop", 1).setValue("ai/models/dragger/position/longitude-deg");
   dragger_mod.model.getNode("latitude-deg-prop", 1).setValue("ai/models/dragger/position/latitude-deg");
@@ -661,4 +661,3 @@ var runDragRobot = func {
 }
 
 var pulling = setlistener("/sim/glider/dragger/robot/run", runDragRobot);
-

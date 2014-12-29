@@ -287,7 +287,7 @@
     <object-name>ImatWingR4-2</object-name>
     <object-name>ImatWingR5</object-name>
     <object-name>ImatWingR6</object-name>
-    <property>sim/multiplay/generic/float[3]</property>
+    <property>sim/multiplay/generic/float[8]</property>
     <interpolation>
       <entry><ind> 0.000 </ind><dep>  1 </dep></entry>
       <entry><ind> 0.333 </ind><dep>  0 </dep></entry>
@@ -308,7 +308,7 @@
     <object-name>ImatWingR4-2</object-name>
     <object-name>ImatWingR5</object-name>
     <object-name>ImatWingR6</object-name>
-    <property>sim/multiplay/generic/float[3]</property>
+    <property>sim/multiplay/generic/float[8]</property>
     <interpolation>
       <entry><ind> 0.000 </ind><dep>  1.5 </dep></entry>
       <entry><ind> 0.333 </ind><dep>  0.0 </dep></entry>

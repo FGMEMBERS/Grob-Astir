@@ -27,24 +27,9 @@
     <object-name>vitre</object-name>
   </animation>
 
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-    <object-name>vitre</object-name>
-  </animation>
-
-  <animation>
-    <type>noshadow</type>
-    <object-name>vitre</object-name>
-  </animation>
-
   <!-- working for Rembrandt -->
   <effect>
-    <inherits-from>Effects/model-transparent</inherits-from>
-    <condition>
-      <property>sim/rendering/rembrandt/enabled</property>
-    </condition>
+    <inherits-from>Aircraft/Grob-Astir/Models/Effects/Glass/glass</inherits-from>
     <object-name>vitre</object-name>
   </effect>
   
@@ -57,11 +42,11 @@
     <object-name>sign-digit</object-name>
     <object-name>dot-digit</object-name>  
     <emission>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+      <factor-prop>/sim/model//material/instruments/factor</factor-prop>
       <red>   0.028 </red>
       <green> 0.014 </green>
       <blue>  0.007 </blue>
-      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
-      <factor-prop>/sim/model//material/instruments/factor</factor-prop>
     </emission>
   </animation>
   

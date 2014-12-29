@@ -25,5 +25,3 @@ var dragger_msg = func {
 var pilot_msg = func {
   setprop("sim/messages/pilot", call(sprintf, arg));
 }
-
-
