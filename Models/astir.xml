@@ -300,7 +300,7 @@
   <animation>
     <type>rotate</type>
     <object-name>aileronG</object-name>      
-    <property>surface-positions/right-aileron-pos-norm</property>
+    <property>surface-positions/left-aileron-pos-norm</property>
     <factor> 10 </factor>
     <axis>
       <x1-m> -0.769 </x1-m>
