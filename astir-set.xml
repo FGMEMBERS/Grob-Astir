@@ -21,6 +21,17 @@
      <model type="int">   4 </model>
     </rating>
 
+    <tags>
+      <tag>glider</tag>
+      <tag>1970s</tag>
+      <tag>1980s</tag>
+      <tag>1990s</tag>
+      <tag>2000s</tag>
+      <tag>2010s</tag>
+      <tag>retractable-gear</tag>
+      <tag>tow</tag>
+    </tags>
+
   </sim>
 
 </PropertyList>
