@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+  
+  <winch>
+    <place type="bool">false</place>
+  </winch>
+  
+  <aerotow>
+    <find-aircraft type="bool">false</find-aircraft>
+  </aerotow>
+  
+</PropertyList>

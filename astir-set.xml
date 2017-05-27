@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<PropertyList include="astir-base.xml">
+<PropertyList include="Systems/astir-base.xml">
 
   <sim>
 
     <description>Grob 102 Jean's ASTIR (YASim)</description>
     <author>BARANGER Emmanuel (3D) / OO ZVY (FDM)</author>
+    <aircraft-version>0.2</aircraft-version>
+    
+    <status>Alpha</status>
     <status>beta production</status>
     
     <flight-model>yasim</flight-model>
-    <aero>astir-yasim</aero>
+    <aero>Systems/astir-yasim</aero>
     
     <rating>
      <FDM type="int">     2 </FDM>
@@ -17,6 +20,17 @@
      <cockpit type="int"> 2 </cockpit>
      <model type="int">   4 </model>
     </rating>
+
+    <tags>
+      <tag>glider</tag>
+      <tag>1970s</tag>
+      <tag>1980s</tag>
+      <tag>1990s</tag>
+      <tag>2000s</tag>
+      <tag>2010s</tag>
+      <tag>retractable-gear</tag>
+      <tag>tow</tag>
+    </tags>
 
   </sim>
 

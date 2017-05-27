@@ -18,12 +18,6 @@
 
   <!-- working for Rembrandt -->
   <effect>
-    <inherits-from>Aircraft/Grob-Astir/Models/Effects/Glass/glass</inherits-from>
-    <object-name>intverriere</object-name>
-  </effect>
-  
-  <!-- working for Rembrandt -->
-  <effect>
     <inherits-from>Effects/model-transparent</inherits-from>
     <object-name>intverriere</object-name>
   </effect>
